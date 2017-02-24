@@ -9,8 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBAction func cameraButton(_ sender: Any) {
-        print("button pressed")
+    
+    var timer = Timer()
+    
+    var time = 210
+
+    func decreaseTimer () {
+        if time > 0 {
+            time -= 1
+            timerLabel.text = String(time)
+        } else {
+            timer.invalidate()
+        }
+    }
+    
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBAction func pauseButton(_ sender: Any) {
+    }
+    @IBAction func playButton(_ sender: Any) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.decreaseTimer), userInfo: nil, repeats: true)
+    }
+    @IBAction func minusTenButton(_ sender: Any) {
+    }
+    @IBAction func plusTenButton(_ sender: Any) {
+    }
+    @IBAction func resetButton(_ sender: Any) {
     }
 
     override func viewDidLoad() {

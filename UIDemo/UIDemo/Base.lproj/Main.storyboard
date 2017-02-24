@@ -25,13 +25,17 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Nav Demo" id="1jw-zO-fNh">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="gBv-0i-NPI">
+                                    <navigationItem title="Egg Timer" id="1jw-zO-fNh">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="gBv-0i-NPI">
                                             <connections>
-                                                <action selector="cameraButton:" destination="BYZ-38-t0r" id="DOZ-nE-OUD"/>
+                                                <action selector="pauseButton:" destination="BYZ-38-t0r" id="F7P-Em-0Fm"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Hi!" id="cv9-ED-U8s"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="cv9-ED-U8s">
+                                            <connections>
+                                                <action selector="playButton:" destination="BYZ-38-t0r" id="TDq-uo-CT3"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -39,17 +43,49 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="refresh" id="eSf-4m-Yf6"/>
+                                    <barButtonItem title="-10" id="eSf-4m-Yf6">
+                                        <connections>
+                                            <action selector="minusTenButton:" destination="BYZ-38-t0r" id="zMd-QM-gsS"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7i6-QN-1a8"/>
-                                    <barButtonItem systemItem="search" id="3Qg-DO-RXP"/>
+                                    <barButtonItem title="Reset" id="Hnn-MO-aQF">
+                                        <connections>
+                                            <action selector="resetButton:" destination="BYZ-38-t0r" id="o7B-yt-Su2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UfB-eR-xmf"/>
+                                    <barButtonItem title="+10" id="3Qg-DO-RXP">
+                                        <connections>
+                                            <action selector="plusTenButton:" destination="BYZ-38-t0r" id="wAM-vy-pRB"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4K-QE-dgl">
+                                <rect key="frame" x="77.5" y="225" width="165" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="QTg-kx-xjN"/>
+                                    <constraint firstAttribute="width" constant="165" id="QhW-6x-tRe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R4K-QE-dgl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="O7y-RC-4xu"/>
+                            <constraint firstItem="R4K-QE-dgl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p0m-3q-6lV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="R4K-QE-dgl" id="vzU-xv-ltj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="135.21126760563379"/>
         </scene>
     </scenes>
 </document>
