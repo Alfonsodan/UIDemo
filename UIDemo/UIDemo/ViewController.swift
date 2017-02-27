@@ -26,15 +26,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBAction func pauseButton(_ sender: Any) {
+        timer.invalidate()
     }
     @IBAction func playButton(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.decreaseTimer), userInfo: nil, repeats: true)
     }
     @IBAction func minusTenButton(_ sender: Any) {
+        if time > 10 {
+            time -= 10
+            timerLabel.text = String(time)
+        }
     }
     @IBAction func plusTenButton(_ sender: Any) {
+        time += 10
+        timerLabel.text = String(time)
     }
     @IBAction func resetButton(_ sender: Any) {
+        time = 210
+        timerLabel.text = String(time)
     }
 
     override func viewDidLoad() {
